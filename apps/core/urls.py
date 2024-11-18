@@ -1,5 +1,6 @@
-
 from django.urls import path
+from . import views
 
-# Pas encore de vues à définir ici
-urlpatterns = []
+urlpatterns = [
+   # path('', views.predict_house_price, name='predict_price_view'),
+]
