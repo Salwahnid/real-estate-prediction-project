@@ -2,6 +2,6 @@ Django>=3.2
 pandas
 numpy
 matplotlib
-statsmodels
+statsmodels>=0.13.0
 joblib
 djangorestframework
