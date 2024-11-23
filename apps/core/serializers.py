@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
 class HousePricePredictionSerializer(serializers.Serializer):
-    current_price = serializers.DecimalField(max_digits=12, decimal_places=2)
+    city = serializers.CharField(max_length=255)
+    current_price = serializers.FloatField()
     date_to_predict = serializers.DateField()
+
