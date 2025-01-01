@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-s6h)o42(wl0^-hr34(3cz!ggc8-wd#zosdgdb*09v$^(t^bpfx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['real-estate-prediction-ai-model.onrender.com']
 
 
 # Application definition
