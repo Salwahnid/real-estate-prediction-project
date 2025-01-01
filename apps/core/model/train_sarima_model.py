@@ -1,9 +1,10 @@
 import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 import pickle
-
+import os
+from django.conf import settings
 # Charger les données
-data = 'C:/Users/WIN/Desktop/IA_project/real-estate-prediction-project/apps/core/data/zillow_data.csv'
+data = os.path.join(settings.BASE_DIR, 'apps', 'core', 'data', 'zillow_data.csv')
 df = pd.read_csv(data, header=0, parse_dates=True)
 
 # Transformer les données pour regrouper les prix

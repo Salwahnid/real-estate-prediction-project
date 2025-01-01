@@ -6,9 +6,12 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import pandas as pd
 from .serializers import HousePricePredictionSerializer
+import os
+from django.conf import settings
 
 # Charger le modèle SARIMA
-MODEL_PATH = 'C:/Users/WIN/Desktop/IA_project/real-estate-prediction-project/apps/core/model/sarima_models_global.pkl'
+# Build the model path dynamically based on the project root directory
+MODEL_PATH = os.path.join(settings.BASE_DIR, 'apps', 'core', 'model', 'sarima_models_global.pkl')
 with open(MODEL_PATH, 'rb') as f:
     sarima_model = pickle.load(f)
 
