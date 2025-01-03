@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s6h)o42(wl0^-hr34(3cz!ggc8-wd#zosdgdb*09v$^(t^bpfx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['real-estate-prediction-ai-model.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Project apps
     'apps.core',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'RealEstate_backend.urls'
@@ -136,3 +139,8 @@ DATABASES = {
         'NAME': os.getenv('DATABASE_PATH', Path(BASE_DIR) / 'db.sqlite3'),
     }
 }
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://real-estate-frontend-eopt.vercel.app",
+    "http://localhost:5173",  # For local development
+]
